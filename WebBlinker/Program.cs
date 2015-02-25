@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Net.Http;
 using System.Threading;
 using Microsoft.Owin.Hosting;
-using WiringPi;
 
 namespace WebBlinker
 {
