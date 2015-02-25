@@ -13,8 +13,10 @@ namespace BlinkerPhone
     public async void SendSimulatedPulse(int value)
     {
       var pulse = new Pulse { HeartRate = value };
-      var client = new HttpClient();
-      await client.PostAsJsonAsync(new Uri(Settings.ServiceUrl), pulse);
+      using (var client = new HttpClient())
+      {
+        await client.PostAsJsonAsync(new Uri(Settings.ServiceUrl), pulse);
+      }
     }
 
     private IBandClient bandClient;
